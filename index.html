@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkd - Alumni Networks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="body-container">
+        <div class="main-container">
+            <div class="bg-container"></div>
+            <header class="header">
+                <div class="header-flex">
+                    <div class="logo">
+                        <a href="#">
+                            <span class="star">✻</span> Linkd
+                        </a>
+                    </div>
+                    <div class="sign-in">
+                        <button class="sign-in-btn">Sign in</button>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <div class="row">
+                    <!-- Left Column - Info -->
+                    <div class="col-6 info-column">
+                        <div class="info-content">
+                            <div class="date">March 10, 2025</div>
+                            <div class="backers">
+                                We are backed by <a href="#">Y Combinator</a> (X25) and <a href="#">Cory Levy</a> for
+                                our
+                                pre-seed.
+                            </div>
+
+                            <div class="mission">
+                                <p>We're here to find out.</p>
+                                <p>Our team is <span>building the world's first search algorithm designed around human
+                                        interactions. Social networks should be centered on our experiences.</p>
+                                </span>
+                                <p><span>It's called Linkd.</span></p>
+                            </div>
+
+                            <div class="contact-info">
+                                <p>> If you're a company interested in people search for social platforms, recruiting,
+                                    or
+                                    leads, please directly <a href="#">contact us</a>.</p>
+                            </div>
+
+                            <div class="about-alumni">
+                                <p>About alumni.</p>
+                                <p>We've began experimenting with this new medium by working with one of the most
+                                    powerful
+                                    forms of connections: Alumni Networks. Begin by searching for people who've
+                                    experienced
+                                    your education.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Schools -->
+                    <div class="col-6 schools-column">
+                        <div class="schools-content">
+                            <div class="schools-header">
+                                <p>Try out our current home for schools:</p>
+                                <p>We've began experimenting with this new medium by working with one of the most
+                                    powerful
+                                    forms of connections: Alumni Networks. Begin by searching for people who've
+                                    experienced
+                                    your education.</p>
+                            </div>
+
+                            <div class="schools-grid">
+                                <!-- Stanford -->
+                                <div class="school-card-wrapper">
+                                    <div class="school-card" data-school="stanford">
+                                        <div class="card-header">
+                                            <span>Stanford</span>
+                                            <span class="arrow">›</span>
+                                        </div>
+                                        <div class="card-image stanford-bg"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Berkeley -->
+                                <div class="school-card-wrapper">
+                                    <div class="school-card" data-school="berkeley">
+                                        <div class="card-header">
+                                            <span>Berkeley</span>
+                                            <span class="arrow">›</span>
+                                        </div>
+                                        <div class="card-image berkeley-bg"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Yale -->
+                                <div class="school-card-wrapper">
+                                    <div class="school-card" data-school="yale">
+                                        <div class="card-header">
+                                            <span>Yale</span>
+                                            <span class="arrow">›</span>
+                                        </div>
+                                        <div class="card-image yale-bg"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Waterloo -->
+                                <div class="school-card-wrapper">
+                                    <div class="school-card" data-school="waterloo">
+                                        <div class="card-header">
+                                            <span>Waterloo</span>
+                                            <span class="arrow">›</span>
+                                        </div>
+                                        <div class="card-image waterloo-bg"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Want this at your school? -->
+                                <div class="school-card-wrapper">
+                                    <div class="school-card" data-school="request">
+                                        <div class="card-header">
+                                            <span>Want this at your school?</span>
+                                            <span class="arrow">›</span>
+                                        </div>
+                                        <div class="card-image request-bg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <div>
+                    <div class="founders">
+                        <a href="#">Eric & Tom</a>
+                    </div>
+                    <div class="contact">
+                        <p>business & general: <a href="mailto:founders@linkd.inc">founders@linkd.inc</a></p>
+                        <p>business & general: <a href="#">intro us here</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- School Info Modal -->
+    <div class="modal" id="schoolModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="schoolModalLabel">School Info</h5>
+                    <button type="button" class="close-btn" id="modalCloseBtn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="school-image" id="modalSchoolImage"></div>
+                    <div class="school-info" id="modalSchoolInfo"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
