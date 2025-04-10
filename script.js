@@ -67,78 +67,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Add click event listener to close button
-    closeBtn.addEventListener('click', hideModal);
+    if (closeBtn) {
+        closeBtn.addEventListener('click', hideModal);
+    }
     
     // Close modal when clicking outside
-    modalBackdrop.addEventListener('click', hideModal);
+    if (modalBackdrop) {
+        modalBackdrop.addEventListener('click', hideModal);
+    }
     
     // Prevent modal from closing when clicking on modal content
-    modal.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
     
     // Add click event listener to each school card
     schoolCards.forEach(card => {
         card.addEventListener('click', function() {
             const school = this.getAttribute('data-school');
-            const data = schoolData[school];
             
-            // Set modal title
-            modalTitle.textContent = data.name;
-            
-            // Set modal image
-            modalImage.style.backgroundImage = `url('${data.image}')`;
-            
-            // Set modal info content
-            if (data.form) {
-                modalInfo.innerHTML = `
-                    <p>${data.description}</p>
-                    <form class="mt-4">
-                        <div class="mb-3">
-                            <label for="schoolName" class="form-label">School Name</label>
-                            <input type="text" class="form-control" id="schoolName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactName" class="form-label">Your Name</label>
-                            <input type="text" class="form-control" id="contactName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="contactEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="role" class="form-label">Your Role</label>
-                            <select class="form-select" id="role" required>
-                                <option value="" selected disabled>Select your role</option>
-                                <option value="student">Student</option>
-                                <option value="alumni">Alumni</option>
-                                <option value="faculty">Faculty/Staff</option>
-                                <option value="admin">Administrator</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn-primary">Submit Request</button>
-                    </form>
-                `;
-            } else {
-                modalInfo.innerHTML = `
-                    <p>${data.description}</p>
-                    <div class="row mt-4">
-                        <div class="col-6">
-                            <p><strong>Founded:</strong> ${data.founded}</p>
-                            <p><strong>Location:</strong> ${data.location}</p>
-                        </div>
-                        <div class="col-6">
-                            <p><strong>Website:</strong> <a href="${data.website}" target="_blank">${data.website}</a></p>
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <button class="btn-primary">Start Exploring Linkd at ${data.name}</button>
-                    </div>
-                `;
-            }
-            
-            // Show the modal
-            showModal();
+            // Instead of showing modal, navigate to project page
+            window.location.href = `project.html?school=${school}`;
         });
     });
     
@@ -163,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Close modal on ESC key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('show')) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
             hideModal();
         }
     });

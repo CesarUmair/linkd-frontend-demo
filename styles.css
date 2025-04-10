@@ -286,7 +286,7 @@ main {
 .request-bg {
     background-image: url('assests/project waterloo bg.PNG');
     background-position: center;
-    filter: blur(16px);
+    filter: blur(1  6px);
 }
 
 /* Footer */
